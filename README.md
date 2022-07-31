@@ -4,7 +4,7 @@
 
 <br>
 <p>
-SmarterChef was developed by Gabriela May-Lagunes, Jesse Miller, Tal Segal, Varun Tanna, and Anil Tipirini as a final project for DATASCI W251 Deep Learning in the Cloud and at the Edge at UC Berkeley. It establishes the fundemental infrastructure for a system that recognizes food items, stores an inventory of those items, and recommends recipes based on the items in inventory. 
+SmarterChef was developed by Gabriela May-Lagunes, Jesse Miller, Tal Segal, Varun Tanna, and Anil Tipirini as a final project for DATASCI W251 Deep Learning in the Cloud and at the Edge at UC Berkeley. It is a fully working end-to-end system that recognizes food items, stores an inventory of those items, and recommends recipes based on the items in inventory. It establishes the fundamental infrastructure for more advanced food recognition programs, as well as any system designed to track inventory via camera/image recognition and perform analysis/recommendations based on that inventory.
 </p>
 <p align="center">
    <img width="850" src="https://github.com/jmiller558/w251finalproject/blob/master/utils/smarterchef1.png"></a>
@@ -22,9 +22,9 @@ sh run
 ```
 
 <p align="left">
-The run script will execute set-up from building the docker image, to running the docker container and launching the program.
+The run script will execute the full initial set-up from building the docker image, to running the docker container and launching the program.
 <br>
-In subsquent runs, the container and program can be launched directly by navigating to the user_interface/w251_app folder and entering the commands as follows:
+In subsquent runs, the container and program can be launched directly by navigating to the user_interface/w251_app folder and entering the docker commands as follows:
 </p>
 
 ```bash
@@ -33,8 +33,12 @@ docker rm w251_app
 docker run --name w251_app -v $PWD:/app/ --device=/dev/video0:/dev/video0 -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -p 8000:8000 w251_app
 ```
 <p align="left">
-To reset the inventory prior to launching the program, simply navigate to the user_interface/w251_app folder and delete the ingredients.db file.
+To reset the inventory prior to launching the program, simply navigate to the user_interface/w251_app folder and delete the ingredients.db file:
 </p>
+```bash
+cd user_interface/w251_app
+rm inventory.db
+```
 
 ## <div align="center">Additional Repo Files</div>
 
