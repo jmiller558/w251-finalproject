@@ -4,7 +4,7 @@
 
 <br>
 <p>
-SmarterChef was developed by Gabriela May-Lagunes, Jesse Miller, Tal Segal, Varun Tanna, and Anil Tipirini as a final project for DATASCI W251 Deep Learning in the Cloud and at the Edge at UC Berkeley. It is a fully working end-to-end system that recognizes food items, stores an inventory of those items, and recommends recipes based on the items in inventory. It establishes the fundamental infrastructure for more advanced food recognition programs, as well as for any system designed to track inventory via camera/image recognition and perform analysis/recommendations based on that inventory.
+SmarterChef was developed by Gabriela May-Lagunes, Jesse Miller, Tal Segal, Varun Tanna, and Anil Tipirini as a final project for DATASCI W251 Deep Learning in the Cloud and at the Edge at UC Berkeley. It is a fully working end-to-end system that recognizes food items, maintains an inventory of those items, and recommends recipes based on the items in inventory. It establishes the fundamental infrastructure for more advanced food recognition programs, as well as for any system designed to track inventory via camera/image recognition and perform analysis/recommendations based on that inventory.
 </p>
 <p align="center">
    <img width="850" src="https://github.com/jmiller558/w251finalproject/blob/master/utils/smarterchef1.png"></a>
