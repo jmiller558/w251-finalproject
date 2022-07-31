@@ -1,0 +1,13 @@
+#!/bin/bash
+cd w251_app
+IMAGE_NAME=w251_app
+APP_NAME=w251_app
+
+# stop and remove image in case this script was run before
+docker stop ${APP_NAME}
+docker rm ${APP_NAME}
+
+# rebuild and run the new image
+docker build -t ${IMAGE_NAME} .
+xhost +
+docker run --name ${APP_NAME} -v $PWD:/app/ --device=/dev/video0:/dev/video0 -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -p 8000:8000 ${IMAGE_NAME}

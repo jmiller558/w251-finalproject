@@ -1,0 +1,408 @@
+YOLOv5 temporarily requires wandb version 0.12.10 or below. Some features may not work as expected.
+                 from  n    params  module                                  arguments
+  0                -1  1      3520  models.common.Focus                     [3, 32, 3]
+  1                -1  1     18560  models.common.Conv                      [32, 64, 3, 2]
+  2                -1  1     19904  models.common.BottleneckCSP             [64, 64, 1]
+  3                -1  1     73984  models.common.Conv                      [64, 128, 3, 2]
+  4                -1  3    161152  models.common.BottleneckCSP             [128, 128, 3]
+  5                -1  1    295424  models.common.Conv                      [128, 256, 3, 2]
+  6                -1  3    641792  models.common.BottleneckCSP             [256, 256, 3]
+  7                -1  1   1180672  models.common.Conv                      [256, 512, 3, 2]
+  8                -1  1    656896  models.common.SPP                       [512, 512, [5, 9, 13]]
+  9                -1  1   1248768  models.common.BottleneckCSP             [512, 512, 1, False]
+ 10                -1  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 11                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 12           [-1, 6]  1         0  models.common.Concat                    [1]
+ 13                -1  1    378624  models.common.BottleneckCSP             [512, 256, 1, False]
+ 14                -1  1     33024  models.common.Conv                      [256, 128, 1, 1]
+ 15                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 16           [-1, 4]  1         0  models.common.Concat                    [1]
+ 17                -1  1     95104  models.common.BottleneckCSP             [256, 128, 1, False]
+ 18                -1  1    147712  models.common.Conv                      [128, 128, 3, 2]
+ 19          [-1, 14]  1         0  models.common.Concat                    [1]
+ 20                -1  1    313088  models.common.BottleneckCSP             [256, 256, 1, False]
+ 21                -1  1    590336  models.common.Conv                      [256, 256, 3, 2]
+ 22          [-1, 10]  1         0  models.common.Concat                    [1]
+ 23                -1  1   1248768  models.common.BottleneckCSP             [512, 512, 1, False]
+ 24      [17, 20, 23]  1     18879  models.yolo.Detect                      [2, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], [128, 256, 512]]
+YOLOv5s summary: 283 layers, 7257791 parameters, 7257791 gradients, 16.9 GFLOPs
+Transferred 223/369 items from yolov5s.pt
+[34m[1mAMP: [39m[22mchecks passed ✅
+Scaled weight_decay = 0.0005
+[34m[1moptimizer:[39m[22m SGD with parameter groups 59 weight (no decay), 70 weight, 62 bias
+[34m[1mtrain: [39m[22mScanning '/home/ubuntu/w251finalyolo5/Random_groceries-1/train/labels' im
+[34m[1mtrain: [39m[22mNew cache created: /home/ubuntu/w251finalyolo5/Random_groceries-1/train/labels.cache
+[34m[1mtrain: [39m[22mCaching images (0.3GB ram): 100%|██████████| 357/357 [00:00<00:00, 466.99
+[34m[1mval: [39m[22mScanning '/home/ubuntu/w251finalyolo5/Random_groceries-1/valid/labels' imag
+[34m[1mval: [39m[22mNew cache created: /home/ubuntu/w251finalyolo5/Random_groceries-1/valid/labels.cache
+[34m[1mval: [39m[22mCaching images (0.1GB ram): 100%|██████████| 175/175 [00:00<00:00, 372.89it
+Plotting labels to runs/train/our_dataset_apple_potato/labels.jpg...
+[34m[1mAutoAnchor: [39m[22m4.68 anchors/target, 1.000 Best Possible Recall (BPR). Current anchors are a good fit to dataset ✅
+Image sizes 640 train, 640 val
+Using 8 dataloader workers
+Logging results to [1mruns/train/our_dataset_apple_potato
+Starting training for 100 epochs...
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+
+      0/99     3.64G    0.1004   0.04181   0.02827        29       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all        175        308    0.00387      0.657    0.00408    0.00112
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+      1/99     3.88G   0.07899   0.04297   0.02543        18       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all        175        308     0.0039      0.666    0.00415    0.00119
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+      2/99     3.88G   0.07172   0.04308   0.02099        23       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all        175        308    0.00332      0.617     0.0109     0.0026
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+      3/99     3.88G   0.06837   0.04015   0.01717        14       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all        175        308      0.658      0.257      0.226      0.075
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+      4/99     3.88G   0.07112   0.03715   0.01341        20       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all        175        308      0.312      0.527      0.318     0.0841
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+      5/99     3.88G   0.06482   0.03546  0.008602        16       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all        175        308      0.341      0.373      0.332     0.0718
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+      6/99     3.88G   0.06619   0.03492  0.009339        15       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all        175        308     0.0505      0.194     0.0354     0.0099
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+      7/99     3.88G   0.05695   0.03495   0.00692        19       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all        175        308      0.176       0.43      0.141     0.0424
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+      8/99     3.88G   0.05962   0.03395  0.004733        13       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all        175        308       0.17      0.552      0.256     0.0908
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+      9/99     3.88G   0.05782   0.03115   0.00458        18       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all        175        308      0.224      0.504      0.297     0.0904
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+     10/99     3.88G   0.05286   0.03178  0.003342        25       640: 100%|███
+                 all        175        308      0.474      0.682      0.542      0.166
+                 all        175        308      0.474      0.682      0.542      0.166
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+     11/99     3.88G   0.05291   0.02994  0.003973        51       640:  57%|███
+     11/99     3.88G   0.05253   0.02969  0.003803        56       640:  96%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███
+                 all        175        308      0.685      0.917      0.839      0.417
+                 all        175        308      0.685      0.917      0.839      0.417
+               Class     Images     Labels          P          R     mAP@.5 mAP@ 0.417
+     15/99     3.88G   0.04553   0.02564  0.001718        62       640:  17%|█▋  0.417
+     15/99     3.88G     0.045    0.0259  0.002539        53       640:  57%|███ 0.417
+     15/99     3.88G   0.04533   0.02506  0.002288        13       640: 100%|███ 0.417
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███ 0.417
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███ 0.417
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███ 0.417
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███ 0.417
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███ 0.417
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███ 0.417
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███ 0.417
+                 all        175        308       0.91       0.94      0.968      0.532
+                 all        175        308       0.91       0.94      0.968      0.532
+               Class     Images     Labels          P          R     mAP@.5 mAP@ 0.532
+     19/99     3.88G   0.04306   0.02442  0.002963        51       640:  13%|█▎  0.532
+     19/99     3.88G   0.04199   0.02399  0.002483        56       640:  52%|███ 0.532
+     19/99     3.88G   0.04047    0.0235  0.002078        46       640:  91%|███ 0.532
+     19/99     3.88G    0.0403   0.02343  0.001988        20       640: 100%|███ 0.532
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███ 0.532
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███ 0.532
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███ 0.532
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███ 0.532
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███ 0.532
+     Epoch   gpu_mem       box       obj       cls    labels  img_size: 100%|███ 0.532
+                 all        175        308      0.973       0.99      0.991      0.591
+                 all        175        308      0.973       0.99      0.991      0.591
+                 all        175        308      0.973       0.99      0.991      0.591
+               Class     Images     Labels          P          R     mAP@.5 mAP@ 0.591
+     23/99     3.88G   0.03641   0.02165  0.001958        54       640:  35%|███ 0.591
+     23/99     3.88G   0.03641   0.02165  0.001958        54       640:  35%|███ 0.591
+     23/99     3.88G   0.03641   0.02165  0.001958        54       640:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+     Epoch   gpu_mem       box       obj       cls    labels  img_size:  35%|███ 0.591
+Validating runs/train/our_dataset_apple_potato/weights/best.pt..._size:  35%|███ 0.591
+Validating runs/train/our_dataset_apple_potato/weights/best.pt..._size:  35%|███ 0.591
+Validating runs/train/our_dataset_apple_potato/weights/best.pt..._size:  35%|███ 0.591
+              Potato        175        146      0.993      0.995      0.995      0.821
+              Potato        175        146      0.993      0.995      0.995      0.821
+              Potato        175        146      0.993      0.995      0.995      0.821
+              Potato        175        146      0.993      0.995      0.995      0.821

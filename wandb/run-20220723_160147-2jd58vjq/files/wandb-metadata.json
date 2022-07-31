@@ -1,0 +1,40 @@
+{
+    "os": "Linux-5.13.0-1031-aws-x86_64-with-glibc2.29",
+    "python": "3.8.10",
+    "heartbeatAt": "2022-07-23T16:01:48.213569",
+    "startedAt": "2022-07-23T16:01:47.209911",
+    "docker": null,
+    "gpu": "Tesla T4",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [
+        "--img",
+        "640",
+        "--batch",
+        "16",
+        "--epochs",
+        "100",
+        "--data",
+        "/home/ubuntu/w251finalyolo5/Random_groceries-1/data.yaml",
+        "--cfg",
+        "./models/yolov5s.yaml",
+        "--weights",
+        "yolov5s.pt",
+        "--name",
+        "our_dataset_apple_potato",
+        "--cache"
+    ],
+    "state": "running",
+    "program": "train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://github.com/jmiller558/w251finalyolo5.git",
+        "commit": "422d9e2048dde9f33d2b4aba384e2ed96e42155b"
+    },
+    "email": null,
+    "root": "/home/ubuntu/w251finalyolo5",
+    "host": "ip-172-31-90-122",
+    "username": "ubuntu",
+    "executable": "/usr/bin/python3"
+}

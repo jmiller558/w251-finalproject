@@ -1,0 +1,1 @@
+{"box_data": [{"position": {"minX": 158.25, "minY": 63.625, "maxX": 494.75, "maxY": 566.0}, "class_id": 0, "box_caption": "apple 0.652", "scores": {"class_score": 0.65185546875}, "domain": "pixel"}], "class_labels": {"0": "apple", "1": "banana", "2": "carrot"}}

@@ -1,0 +1,134 @@
+YOLOv5 temporarily requires wandb version 0.12.10 or below. Some features may not work as expected.
+                 from  n    params  module                                  arguments
+  0                -1  1      3520  models.common.Focus                     [3, 32, 3]
+  1                -1  1     18560  models.common.Conv                      [32, 64, 3, 2]
+  2                -1  1     19904  models.common.BottleneckCSP             [64, 64, 1]
+  3                -1  1     73984  models.common.Conv                      [64, 128, 3, 2]
+  4                -1  3    161152  models.common.BottleneckCSP             [128, 128, 3]
+  5                -1  1    295424  models.common.Conv                      [128, 256, 3, 2]
+  6                -1  3    641792  models.common.BottleneckCSP             [256, 256, 3]
+  7                -1  1   1180672  models.common.Conv                      [256, 512, 3, 2]
+  8                -1  1    656896  models.common.SPP                       [512, 512, [5, 9, 13]]
+  9                -1  1   1248768  models.common.BottleneckCSP             [512, 512, 1, False]
+ 10                -1  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 11                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 12           [-1, 6]  1         0  models.common.Concat                    [1]
+ 13                -1  1    378624  models.common.BottleneckCSP             [512, 256, 1, False]
+ 14                -1  1     33024  models.common.Conv                      [256, 128, 1, 1]
+ 15                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 16           [-1, 4]  1         0  models.common.Concat                    [1]
+ 17                -1  1     95104  models.common.BottleneckCSP             [256, 128, 1, False]
+ 18                -1  1    147712  models.common.Conv                      [128, 128, 3, 2]
+ 19          [-1, 14]  1         0  models.common.Concat                    [1]
+ 20                -1  1    313088  models.common.BottleneckCSP             [256, 256, 1, False]
+ 21                -1  1    590336  models.common.Conv                      [256, 256, 3, 2]
+ 22          [-1, 10]  1         0  models.common.Concat                    [1]
+ 23                -1  1   1248768  models.common.BottleneckCSP             [512, 512, 1, False]
+ 24      [17, 20, 23]  1     94395  models.yolo.Detect                      [30, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], [128, 256, 512]]
+YOLOv5s summary: 283 layers, 7333307 parameters, 7333307 gradients, 17.2 GFLOPs
+Transferred 223/369 items from yolov5s.pt
+[34m[1mAMP: [39m[22mchecks passed ✅
+Scaled weight_decay = 0.0005
+[34m[1moptimizer:[39m[22m SGD with parameter groups 59 weight (no decay), 70 weight, 62 bias
+[34m[1mtrain: [39m[22mScanning '/home/ubuntu/w251finalyolo5/aicook-4/train/labels.cache' images
+
+[34m[1mtrain: [39m[22mCaching images (3.6GB ram): 100%|██████████| 2896/2896 [00:04<00:00, 668.
+[34m[1mval: [39m[22mScanning '/home/ubuntu/w251finalyolo5/aicook-4/valid/labels.cache' images a
+[34m[1mval: [39m[22mCaching images (0.1GB ram): 100%|██████████| 103/103 [00:00<00:00, 193.97it
+Plotting labels to runs/train/yolov5s_results3/labels.jpg...
+[34m[1mAutoAnchor: [39m[22m5.20 anchors/target, 1.000 Best Possible Recall (BPR). Current anchors are a good fit to dataset ✅
+Image sizes 640 train, 640 val
+Using 8 dataloader workers
+Logging results to [1mruns/train/yolov5s_results3
+Starting training for 100 epochs...
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      0/99     3.71G   0.08946    0.1408   0.08443       402       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@WARNING: NMS time limit 1.260s exceeded
+               Class     Images     Labels          P          R     mAP@.5 mAP@WARNING: NMS time limit 1.260s exceeded
+               Class     Images     Labels          P          R     mAP@.5 mAP@WARNING: NMS time limit 1.260s exceeded
+               Class     Images     Labels          P          R     mAP@.5 mAP@WARNING: NMS time limit 0.510s exceeded
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all        103       1227    0.00588     0.0884     0.0065    0.00177
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      1/99     4.64G   0.07014    0.1182   0.08163       256       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all        103       1227     0.0261      0.624      0.076     0.0249
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      2/99     4.64G   0.06258    0.1052   0.07743       286       640: 100%|███
+               Class     Images     Labels          P          R     mAP@.5 mAP@
+                 all        103       1227       0.76      0.121     0.0872     0.0363
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
