@@ -1,4 +1,4 @@
-<p align="center>
+<p align="center">
    <img width="850" src="https://github.com/jmiller558/w251finalproject/blob/master/utils/smarterchef.png"></a>
 </p>
 
