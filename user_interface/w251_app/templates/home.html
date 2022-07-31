@@ -1,10 +1,22 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<script>
+  $(document).ready(function() {
+    $("#reset_ing").click(function() {
+      $.ajax({
+        url: '/reset',
+        type: 'POST',
+      });
+    });
+  });
+</script>
 
 <form method="POST">
   <button type= "submit" class = "ui primary button">Add Ingredient</button>
 </form>
+
+<button id="reset_ing" class="ui button secondary">Reset Ingredients</button>
 
 </form>
 <table class="ui celled table">
@@ -43,7 +55,7 @@
     <tr>
       <td>
 	  <p><label for="image">{{ recipe.recipe_name }} </label></p>
-	  <img id="image" src={{ recipe.image }} width=100 height=100>
+	  <img id="image" src= {{recipe.image}} width=100 height=100>
       </td>
       <td>{{ recipe.used_ingredients }}</td>
       <td>{{ recipe.missing_ingredients }}</td>

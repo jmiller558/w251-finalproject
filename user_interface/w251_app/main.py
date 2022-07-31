@@ -1,5 +1,5 @@
 import pymodels
-import sys
+import sys, os
 import requests
 from fastapi import FastAPI, Request, Depends, BackgroundTasks, UploadFile
 from fastapi.templating import Jinja2Templates
@@ -23,8 +23,6 @@ templates = Jinja2Templates(directory="templates")
 path = sys.path[0]
 model = torch.hub.load(path, 'custom', path='../best.pt', source='local')
 model.conf = .7
-#model.classes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,26,27,28,29]
-
 
 
 class IngredientRequest(BaseModel):
@@ -55,8 +53,6 @@ def home(request: Request, db: Session = Depends(get_db)):
     show all ingredients in the database
     """
 
-    # ingredients = db.query(Ingredient)  
-    # ingredients = ingredients.all()
     try: 
         ingredients = db.query(Ingredient.name, func.sum(Ingredient.quantity).label("quantity")).group_by(Ingredient.name).all() 
     except: 
@@ -71,7 +67,7 @@ def home(request: Request, db: Session = Depends(get_db)):
 @app.post("/")
 async def create_ingredient(request: Request,  db: Session = Depends(get_db)):
 #     """
-#     add one or more ingredients to the database
+#     add one or more ingredients to the database, and generate potential recipes 
 #     """
     WINDOW_NAME = "Food Detector"
     food_found = 0
@@ -80,7 +76,6 @@ async def create_ingredient(request: Request,  db: Session = Depends(get_db)):
         while True:
             ret, frame = cap.read()
             image = frame[..., ::-1]
-            #cv2.imshow(WINDOW_NAME, frame)
             results = model(image, size=640)
             results_frame = results.render()[-1][..., ::-1]
             cv2.imshow(WINDOW_NAME, results_frame)
@@ -118,7 +113,7 @@ async def create_ingredient(request: Request,  db: Session = Depends(get_db)):
     ingredient_names = df_ingred["name"].values.tolist()
     for ing_name in ingredient_names:
         ingredient = Ingredient()
-        ingredient.name = ing_name.lower()
+        ingredient.name = ing_name.replace('_',' ').lower()
         ingredient.quantity = 1
         db.add(ingredient)
         db.commit()
@@ -171,5 +166,7 @@ async def create_ingredient(request: Request,  db: Session = Depends(get_db)):
         "recipes": recipes
     })
 
-
-
+@app.post("/reset")
+async def rest_ing_db():
+    if os.path.exists(f"{path}/ingredients.db"):
+        os.remove(f"{path}/ingredients.db")
