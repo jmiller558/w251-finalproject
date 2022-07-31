@@ -8,7 +8,7 @@
 SmarterChef was developed by Gabriela May-Lagunes, Jesse Miller, Tal Segal, Varun Tanna, and Anil Tipirini as a final project for DATASCI W251 Deep Learning in the Cloud and at the Edge at UC Berkeley. It establishes the fundemental infrastructure for a system that recognizes food items, stores an inventory of those items, and recommends recipes based on the items in inventory. 
 </p>
 
-## <div align="center">Running The Program</div>
+## <div align="left">Running The Program</div>
 
 To run the program for the first time, navigate to the user-interface folder and execute the run script with:
 
@@ -28,7 +28,7 @@ docker run --name w251_app -v $PWD:/app/ --device=/dev/video0:/dev/video0 -v /tm
 
 To reset the inventory prior to launching the program, simply navigate to the user_interface/w251_app folder and delete the ingredients.db file.
 
-## <div align="center">Additional Repo Files</div>
+## <div align="left">Additional Repo Files</div>
 
 Other files in the repo include:
 
