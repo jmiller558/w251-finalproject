@@ -1,6 +1,6 @@
 <div align="center">
 <p>
-   <img width="850" src="https://cloudobjectstorage.s3.us-west-1.amazonaws.com/110.png"></a>
+   <img width="850" src="https://github.com/jmiller558/w251finalyolo5/blob/master/runs/val/exp8/val_batch2_pred.jpg"></a>
 </p>
 
 <br>
