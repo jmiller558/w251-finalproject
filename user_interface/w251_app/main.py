@@ -166,7 +166,8 @@ async def create_ingredient(request: Request,  db: Session = Depends(get_db)):
         "recipes": recipes
     })
 
-@app.post("/reset")
-async def rest_ing_db():
-    if os.path.exists(f"{path}/ingredients.db"):
-        os.remove(f"{path}/ingredients.db")
+@app.get("/reset")
+async def rest_ing_db(request:Request, db: Session = Depends(get_db)):
+    db.query(Ingredient).delete()
+    db.commit()
+

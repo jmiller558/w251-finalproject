@@ -6,7 +6,11 @@
     $("#reset_ing").click(function() {
       $.ajax({
         url: '/reset',
-        type: 'POST',
+        type: 'GET',
+      });
+      $.ajax({
+        url: '/',
+        type: 'GET',
       });
     });
   });
@@ -16,9 +20,10 @@
   <button type= "submit" class = "ui primary button">Add Ingredient</button>
 </form>
 
+<form method="GET">
 <button id="reset_ing" class="ui button secondary">Reset Ingredients</button>
-
 </form>
+
 <table class="ui celled table">
   <thead>
     <tr>
@@ -39,8 +44,6 @@
 {% endblock %}
 
 {% block more_content %}
-
-</form>
 
 <table class="ui celled table">
   <thead>
