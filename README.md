@@ -10,23 +10,23 @@ SmarterChef was developed by Gabriela May-Lagunes, Jesse Miller, Tal Segal, Varu
 ## <div align="center">Running The Program</div>
 
 <p align="left">
-To run the program for the first time, navigate to the user-interface folder and execute the run script with:
+To run the program for the first time, navigate to the user-interface folder and execute the run script as follows:
 </p>
 
 ```bash
+cd user_interface
 sh run
 ```
 
 <p align="left">
 The run script will execute set-up from building the docker image, to running the docker container and launching the program.
 <br>
-In subsquent runs, the container and program can be launched directly by navigating to the user_interface/w251_app folder and entering the commands:
+In subsquent runs, the container and program can be launched directly by navigating to the user_interface/w251_app folder and entering the commands as follows:
 </p>
 
 ```bash
+cd user_interface/w251_app
 docker rm w251_app
-```
-```bash
 docker run --name w251_app -v $PWD:/app/ --device=/dev/video0:/dev/video0 -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -p 8000:8000 w251_app
 ```
 <p align="left">
