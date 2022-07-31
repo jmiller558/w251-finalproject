@@ -40,6 +40,6 @@ Other files in the repo include:
 1. custom_model_train.ipynb: a jupyter notebook showing the model training and validation process
 2. train.py: script used for training
 3. val.py: script used for validation
-4. other supporting folders and files utilized the above scripts
+4. other supporting folders and files utilized in the above scripts
 
 
