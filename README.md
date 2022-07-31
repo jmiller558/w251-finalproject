@@ -24,6 +24,7 @@ sh run
 <p align="left">
 The run script will execute the full initial set-up from building the docker image, to running the docker container and launching the program.
 <br>
+
 In subsquent runs, the container and program can be launched directly by navigating to the user_interface/w251_app folder and entering the docker commands as follows:
 </p>
 
