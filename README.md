@@ -12,15 +12,15 @@ SmarterChef was developed by Gabriela May-Lagunes, Jesse Miller, Tal Segal, Varu
 
 <p align="left">
 To run the program for the first time, navigate to the user-interface folder and execute the run script with:
-<br>
+</p>
 ```bash
 sh run
 ```
-<br>
+<p align="left">
 The run script will execute set-up from building the docker image, to running the docker container and launching the program.
 <br>
 In subsquent runs, the container and program can be launched directly by navigating to the user_interface/w251_app folder and entering the commands:
-<br>
+</p>
 ```bash
 docker rm w251_app
 ```
@@ -28,7 +28,7 @@ docker rm w251_app
 ```bash
 docker run --name w251_app -v $PWD:/app/ --device=/dev/video0:/dev/video0 -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -p 8000:8000 w251_app
 ```
-<br>
+<p align="left">
 To reset the inventory prior to launching the program, simply navigate to the user_interface/w251_app folder and delete the ingredients.db file.
 </p>
 
