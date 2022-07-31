@@ -1,6 +1,6 @@
 <div align="center">
 <p>
-   <img width="850" src="https://github.com/ultralytics/yolov5/releases/download/v1.0/splash.jpg"></a>
+   <img width="850" src="https://cloudobjectstorage.s3.us-west-1.amazonaws.com/110.png"></a>
 </p>
 
 <br>
