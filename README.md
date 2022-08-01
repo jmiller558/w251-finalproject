@@ -33,14 +33,6 @@ cd user_interface/w251_app
 docker rm w251_app
 docker run --name w251_app -v $PWD:/app/ --device=/dev/video0:/dev/video0 -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -p 8000:8000 w251_app
 ```
-<p align="left">
-To reset the inventory prior to launching the program, simply navigate to the user_interface/w251_app folder and delete the ingredients.db file:
-</p>
-
-```bash
-cd user_interface/w251_app
-rm inventory.db
-```
 
 ## <div align="center">Additional Repo Files</div>
 
