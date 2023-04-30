@@ -1,5 +1,5 @@
 <p align="center">
-   <img width="850" src="https://github.com/jmiller558/w251-finalproject/blob/master/utils/smarterchef2.png"></a>
+   <img width="850" src="https://github.com/jmiller558/w251-finalproject/blob/main/utils/smarterchef2.png"></a>
 </p>
 
 <br>
@@ -9,7 +9,7 @@ SmarterChef was developed by Gabriela May-Lagunes, Jesse Miller, Tal Segal, Varu
 * you can read our final report [here](https://github.com/jmiller558/w251-finalproject/blob/b153e901555f0d82b293d731718bcf2a538abe29/W251-FinalReport-SmarterChef.pdf)
 </p>
 <p align="center">
-   <img width="850" src="https://github.com/jmiller558/w251-finalproject/blob/master/utils/smarterchef1.png"></a>
+   <img width="850" src="https://github.com/jmiller558/w251-finalproject/blob/main/utils/smarterchef1.png"></a>
 </p>
 
 ## <div align="center">Running The Program</div>
